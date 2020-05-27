@@ -1,7 +1,7 @@
 //define local variable(s) here.  Use static keyword to keep local, e.g:
 //   static int i;  // defines a local int named i
 unsigned char eqDetection = 0x00;
-unsigned char amp = motionAmplitude;
+unsigned char amp;
 unsigned char detected = 0x00;
 
 

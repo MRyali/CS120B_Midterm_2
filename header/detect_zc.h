@@ -2,7 +2,7 @@
 //define local variable(s) here.  Use static keyword to keep local, e.g:
 //   static int i;  // defines a local int named i
 int run = 0;
-unsigned char motion = motionDirection;
+unsigned char motion;
 unsigned char temp = motion;
 unsigned char difference = 0x04;
 int zc = 0;

@@ -4,7 +4,7 @@
 unsigned char max = 0x00;
 
 /* complete the state machine. */
-unsigned char motionAmplitudeVal = motionAmplitude;
+unsigned char motionAmplitudeVal;
 
 void Detect_Max_Amp()
 {

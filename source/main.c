@@ -15,8 +15,8 @@
 typedef enum ping_states { PInit, pingCheck, pingOff, pingOn} ping_states;
 typedef enum detect_eq_states { DEQInit, detectEq, posDetection, noDetection} detect_eq_states;
 typedef enum detect_max_amp_states { DMAInit, detectMax, maxCheck} detect_max_amp_states;
-typedef enum detect_zc_states { DZCInit,                                    } detect_zc_states;
-typedef enum transmit_states {TInit,                                        } transmit_states;
+typedef enum detect_zc_states { DZCInit, run, posZC} detect_zc_states;
+typedef enum transmit_states {TInit, transmit} transmit_states;
 
 /* shared variables --- fill in as needed */
 unsigned long motionDirection; //motion direction button (A2 - A0)

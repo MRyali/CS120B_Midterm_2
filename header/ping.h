@@ -1,8 +1,8 @@
 //define local variable(s) here.  Use static keyword to keep local, e.g:
 //   static int i;  // defines a local int named i
 
-motionAmplitude = ~PINA & 0xF8; // (A7 - A3)
-static unsigned char pingVal = 0x00;
+
+unsigned char pingVal = 0x00;
 
 /*complete the state machine*/
 
@@ -14,11 +14,13 @@ void Ping()
             ping_state = pingCheck;
             break;
         case pingCheck:
-            if (motionAmplitude == 0) {
-                ping_state = pingOff;
+            motionAmplitude = ~PINA & 0xF8; // (A7 - A3)
+            motionDirection = ~PINA & 0x03; // (A2 - A0)
+            if (motionAmplitude > 0 ) {
+                ping_state = pingOn;
             }
             else {
-                ping_state = pingOn;
+                ping_state = pingOff;
             }
             break;
         case pingOff:
@@ -37,15 +39,12 @@ void Ping()
             break;
         case pingCheck:
             pingVal = 0x00;
-            PORTB = PORTB | pingVal;
             break;
         case pingOff:
             pingVal = 0x00;
-            PORTB = PORTB | pingVal;
             break;
         case pingOn:
             pingVal = 0x01;
-            PORTB = PORTB | pingVal;
             break;
         default:
             break;

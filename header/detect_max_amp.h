@@ -1,7 +1,7 @@
 
 //define local variable(s) here.  Use static keyword to keep local, e.g:
 //   static int i;  // defines a local int named i
-static unsigned char max = 0x00;
+unsigned char max = 0x00;
 
 /* complete the state machine. */
 unsigned char motionAmplitudeVal = motionAmplitude >> 3;
@@ -14,7 +14,8 @@ void Detect_Max_Amp()
             detect_max_amp_state = detectMax;
             break;
         case detectMax:
-            if (motionAmplitude) {
+            motionAmplitudeVal = motionAmplitude >> 3
+            if (motionAmplitudeVal > 0) {
                 detect_max_amp_state = maxCheck;
             }
             else {
@@ -37,7 +38,6 @@ void Detect_Max_Amp()
             if (motionAmplitudeVal > max) {
                 max = motionAmplitudeVal;
             }
-            PORTB = PORTB | (max << 3)
             break;
         default:
             break;

@@ -19,7 +19,7 @@ typedef enum detect_zc_states { DZCInit,                                    } de
 typedef enum transmit_states {TInit,                                        } transmit_states;
 
 /* shared variables --- fill in as needed */
-unsigned long motionDetection; //motion detection button (A2 - A0)
+unsigned long motionDirection; //motion direction button (A2 - A0)
 unsigned long motionAmplitude; //motion amplitude button (A7 - A3)
 
 

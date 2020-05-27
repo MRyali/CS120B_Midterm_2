@@ -1,7 +1,7 @@
 //define local variable(s) here.  Use static keyword to keep local, e.g:
 //   static int i;  // defines a local int named i
 static unsigned char eqDetection = 0x00;
-static unsigned char amp = motionAmplitude >> 3;
+static unsigned char amp = motionAmplitude;
 unsigned char detected = 0x00;
 
 
@@ -15,7 +15,8 @@ void Detect_EQ()
             detect_eq_state = detectEq;
             break;
         case detectEq:
-            amp = motionAmplitude >> 3
+            amp = motionAmplitude;
+            amp = amp >> 3;
             if (amp > 0) {
                 detect_eq_state = posDetection;
             }

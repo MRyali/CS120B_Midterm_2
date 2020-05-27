@@ -4,7 +4,7 @@
 unsigned char max = 0x00;
 
 /* complete the state machine. */
-unsigned char motionAmplitudeVal = motionAmplitude >> 3;
+unsigned char motionAmplitudeVal = motionAmplitude;
 
 void Detect_Max_Amp()
 {
@@ -14,7 +14,8 @@ void Detect_Max_Amp()
             detect_max_amp_state = detectMax;
             break;
         case detectMax:
-            motionAmplitudeVal = motionAmplitude >> 3
+            motionAmplitudeVal = motionAmplitude;
+            motionAmplitudeVal = motionAmplitudeVal >> 3;
             if (motionAmplitudeVal > 0) {
                 detect_max_amp_state = maxCheck;
             }

@@ -19,7 +19,7 @@ void Detect_ZC()
             break;
         case run:
             motion = motionDirection;
-            if (run < 2 && (motion == temp + difference) {
+            if (run < 2 && (motion == temp + difference)) {
                 zc++; //counts consecutive times
                 if (zc == 2) {
                     detect_zc_state = posZC;

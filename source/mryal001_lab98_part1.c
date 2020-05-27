@@ -1,5 +1,5 @@
-/*	Author: <your name>
- *	Lab Section:
+/*	Author: Mayur Ryali
+ *	Lab Section: 21
  *  Exam #2
  *
  *	I acknowledge all content contained herein, excluding template or example

@@ -12,15 +12,15 @@
 #include "timer.h"
 
 /* SM state declarations --- fill in as needed */
-typedef enum ping_states { PInit,                                           } ping_states;
-typedef enum detect_eq_states { DEQInit,                                    } detect_eq_states;
-typedef enum detect_max_amp_states { DMAInit,                               } detect_max_amp_states;
+typedef enum ping_states { PInit, pingCheck, pingOff, pingOn} ping_states;
+typedef enum detect_eq_states { DEQInit, detectEq, posDetection, noDetection} detect_eq_states;
+typedef enum detect_max_amp_states { DMAInit, detectMax, maxCheck} detect_max_amp_states;
 typedef enum detect_zc_states { DZCInit,                                    } detect_zc_states;
 typedef enum transmit_states {TInit,                                        } transmit_states;
 
 /* shared variables --- fill in as needed */
-
-
+unsigned long motionDetection; //motion detection button (A2 - A0)
+unsigned long motionAmplitude; //motion amplitude button (A7 - A3)
 
 
 

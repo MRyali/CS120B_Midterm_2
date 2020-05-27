@@ -2,21 +2,24 @@
 //define local variable(s) here.  Use static keyword to keep local, e.g:
 //   static int i;  // defines a local int named i
 
-/* complete the state machine. */
 
-void Detect_Max_Amp()
+
+/*complete the state machine*/
+
+void Detect_ZC()
 {
-    switch(detect_max_amp_state)
+    switch(detect_zc_state)
     {
-        case DMAInit:
+        case DZCInit:
             break;
 
         default:
+            detect_zc_state = DZCInit;
             break;
     }
-    switch(detect_max_amp_state)
+    switch(detect_zc_state)
     {
-        case DMAInit:
+        case DZCInit:
             break;
         default:
             break;

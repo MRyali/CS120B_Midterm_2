@@ -1,11 +1,11 @@
 
 //define local variable(s) here.  Use static keyword to keep local, e.g:
 //   static int i;  // defines a local int named i
-static int run = 0;
-static unsigned char motion = motionDirection;
-static unsigned char temp = motion;
-static unsigned char difference = 0x04;
-static int zc = 0;
+int run = 0;
+unsigned char motion = motionDirection;
+unsigned char temp = motion;
+unsigned char difference = 0x04;
+int zc = 0;
 unsigned char zcVal = 0x00;
 
 /*complete the state machine*/

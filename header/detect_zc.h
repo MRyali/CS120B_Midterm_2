@@ -3,7 +3,7 @@
 //   static int i;  // defines a local int named i
 int run = 0;
 unsigned char motion;
-unsigned char temp = motion;
+unsigned char temp;
 unsigned char difference = 0x04;
 int zc = 0;
 unsigned char zcVal = 0x00;
@@ -21,6 +21,7 @@ void Detect_ZC()
             motion = motionDirection;
             if (run < 2 && (motion == temp + difference)) {
                 zc++; //counts consecutive times
+                temp = motion;
                 if (zc == 2) {
                     detect_zc_state = posZC;
                 }
